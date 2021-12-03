@@ -49,9 +49,10 @@
 
         -  [Data visualisation](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)
 
+
 - Day5
-  
-        -  Manipulating and analyzing data: practical examples
+
+	-  Manipulating and analyzing data: practical examples
 
         -  Data visualisation: practical examples
 
@@ -62,7 +63,7 @@ We will only use open-source software and all the course's slides and materials 
 
 ### Wiki page
 
-On the [WIKI page](https://github.com/PhD-Toolbox-course/2022_PhD_Toolbox_course-/wiki/Extra-contents) you can find useful links and extra contents.
+On the [WIKI page](https://github.com/PhD-Toolbox-course/2022_PhD_Toolbox_course/wiki/Extra-content) you can find useful links and extra contents.
 
 ---
 
