@@ -49,6 +49,12 @@
 
         -  [Data visualisation](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)
 
+- Day5
+  
+        -  Manipulating and analyzing data: practical examples
+
+        -  Data visualisation: practical examples
+
 
 ### Open-source
 
