@@ -66,7 +66,7 @@ On the [WIKI page](https://github.com/PhD-Toolbox-course/2022_PhD_Toolbox_course
 
 ---
 
-<center><h2><p>Questions and interaction</p></h2></center>
+<center><h3><p>Questions and interaction</p></h3></center>
 
 - We will use [Slack](https://phdtoolbox2022.slack.com/) for chatting, taking notes, and sharing URLs and bits of code.
 
