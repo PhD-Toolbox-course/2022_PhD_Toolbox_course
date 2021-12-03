@@ -46,8 +46,7 @@
 - Day4
 
 	-  [Manipulating and analyzing data](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html)
-
-        -  [Data visualisation](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)
+	-  [Data visualisation](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)
 
 
 - Day5
