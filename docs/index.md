@@ -27,20 +27,17 @@
 - Day 1
 
 	-  [Reproducible research](https://phd-toolbox-course.github.io/2022_PhD_Toolbox_course/01-RR.html)
-
 	-  [UNIX](https://github.com/PhD-Toolbox-course/2022_PhD_Toolbox_course/blob/master/lessons/02.UNIX.pdf)
 
 - Day2
 
 	-  [UNIX](https://github.com/PhD-Toolbox-course/2022_PhD_Toolbox_course/blob/master/lessons/02.UNIX.pdf)
-
 	-  [Introduction to R](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html)
 
 
 - Day3
 
 	-  [Starting with data](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html)
-
 	-  [Manipulating and analyzing data](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html)
 
 - Day4
@@ -52,8 +49,7 @@
 - Day5
 
 	-  Manipulating and analyzing data: practical examples
-
-        -  Data visualisation: practical examples
+	-  Data visualisation: practical examples
 
 
 ### Open-source
