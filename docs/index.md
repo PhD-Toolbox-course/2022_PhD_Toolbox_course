@@ -18,9 +18,11 @@
 
 **PhD toolbox workshop** is for any phD student who has data to analyze, no prior computational experience is required. This hands-on workshop teaches basic concepts, skills and tools for working more effectively with data.
 
-**Slack**: [Slack](https://phdtoolbox2022.slack.com/)
+Please create a profile on the following websites:
 
-**RStudio Cloud**: [rstudio cloud](https://rstudio.cloud/)
+- **Slack**: [Slack](https://phdtoolbox2022.slack.com/). For chatting and exchange information.
+
+- **RStudio Cloud**: [rstudio cloud](https://rstudio.cloud/). Website to use R.
 
 <center><h2><p>Schedule</p></h2></center>
 
