@@ -15,6 +15,8 @@
 
 <center><h2><p>General Information</p></h2></center>
 
+**Venue**: [Aula B7, Palazzo Campana](https://goo.gl/maps/QjXmKNf3XTjCyMUDA)
+
 
 **PhD toolbox workshop** is for any phD student who has data to analyze, no prior computational experience is required. This hands-on workshop teaches basic concepts, skills and tools for working more effectively with data.
 
@@ -26,32 +28,30 @@ Please create a profile on the following websites:
 
 <center><h2><p>Schedule</p></h2></center>
 
-- Day 1
+- Day 1 (09:00-16:00)
 
 	-  [Reproducible research](https://phd-toolbox-course.github.io/2022_PhD_Toolbox_course/01-RR.html)
 	-  [UNIX](https://github.com/PhD-Toolbox-course/2022_PhD_Toolbox_course/blob/master/lessons/02.UNIX.pdf)
 
-- Day2
+- Day2 (09:00-12:00)
 
-	-  [UNIX](https://github.com/PhD-Toolbox-course/2022_PhD_Toolbox_course/blob/master/lessons/02.UNIX.pdf)
+    -  [Data Organization in Spreadsheets](https://datacarpentry.org/spreadsheet-ecology-lesson/)
+
+- Day3 (10:00-16:00)
+
 	-  [Introduction to R](https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html)
-
-
-- Day3
-
 	-  [Starting with data](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html)
-	-  [Manipulating and analyzing data](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html)
 
-- Day4
+- Day4 (10:00-16:00)
 
 	-  [Manipulating and analyzing data](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html)
 	-  [Data visualisation](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html)
 
 
-- Day5
+- Day5 (10:00-16:00)
 
-	-  Manipulating and analyzing data: practical examples
-	-  Data visualisation: practical examples
+    - [Version control with git and GitHub]()
+    - [Rmarkdown](https://bookdown.org/yihui/rmarkdown/)
 
 
 ### Open-source
