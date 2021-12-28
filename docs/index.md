@@ -50,7 +50,7 @@ Please create a profile on the following websites:
 
 - Day5 (10:00-16:00)
 
-    - [Version control with git and GitHub]()
+    - [Version control with git and GitHub](https://phd-toolbox-course.github.io/2022_PhD_Toolbox_course/git.html)
     - [Rmarkdown](https://bookdown.org/yihui/rmarkdown/)
 
 
