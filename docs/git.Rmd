@@ -1,0 +1,357 @@
+---
+title: "Reproducible Research"
+subtitle: "Introduction to Data Science with Unix and R"
+author: "Marco Chiapello"
+date: "2020-06-08"
+output:
+  xaringan::moon_reader:
+    css: ["scrollable.css", "mtheme_max.css", "fonts_mtheme_max.css"]
+    self_contained: false
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+    countIncrementalSlides: false
+    seal: false  
+---
+
+```{r setup, include=FALSE, cache=FALSE}
+# TO render: rmarkdown::render('git.Rmd', 'xaringan::moon_reader')
+# set working directory to docs folder
+#setwd(here::here("docs"))
+
+# Set global R options
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+
+# Set global knitr chunk options
+knitr::opts_chunk$set(
+  fig.align = "center", 
+  cache = TRUE,
+  error = FALSE,
+  message = FALSE, 
+  warning = FALSE, 
+  collapse = TRUE 
+)
+
+```
+
+class: title-slide   
+
+
+
+<br><br><br>
+# .font200[Data science in Unix and R]
+## .font180[Version control with git and GitHub]
+
+<br>
+.marco[
+Marco Chiapello
+<br>
+January, 14th 2022
+]
+
+---
+
+layout: true
+
+# Version control
+
+---
+
+## What is version control? 
+
+- Version control is the practice of tracking and managing changes to software code.    
+
+- Version control systems are software tools that help software teams manage changes to source code over time.    
+
+- Version control software keeps track of every modification to the code in a special kind of database.    
+
+- Using version control software is a best practice for high performing software and DevOps teams.
+
+---
+
+## Benefits of version control systems
+
+1. A complete long-term change history of every file (**keep history**)
+   - This means every change made by many individuals over the years (**back up**).    
+   - Changes include the creation and deletion of files as well as edits to their contents (**view changes**).
+
+1. Branching and merging (**Experiment**)
+
+1. Traceability
+   - Being able to trace each change made to the software and connect it to project management and bug tracking software
+
+---
+layout: true
+
+# Git
+
+---
+
+## What is Git?
+
+- Git is the most widely used modern version control system in the world today (Git is a de facto standard)
+
+- Originally developed in 2005 by Linus Torvalds, the famous creator of the Linux operating system kernel
+
+- Git has the functionality, performance, security and flexibility that most individual developers need
+
+- Git is a very well supported open source project with over a decade of solid stewardship
+
+.center[**One common criticism of Git is that it can be difficult to learn**]
+
+---
+
+## Setting up a repository 
+
+**A Git repository is a virtual storage of your project.** It allows you to save versions of your code, which you can access when needed.
+
+- Initializing a new Git repo
+
+- Cloning an existing Git repo
+
+---
+
+## Setting up a repository 
+
+**A Git repository is a virtual storage of your project.** It allows you to save versions of your code, which you can access when needed.
+
+- **Initializing a new Git repo**
+
+- .opacity20[Cloning an existing Git repo]
+
+---
+
+## Initializing a new repository
+
+#### COMMAND
+
+```
+git init
+```
+
+---
+
+## Initializing a new repository
+
+#### COMMAND
+
+```
+git init
+```
+
+<br>
+<br>
+<br>
+
+.center[.font180[.bold[DEMO]]]
+
+
+---
+
+## Create a file
+
+For this tutorial we are going to create an R file with few line of commands.
+
+Let's start by creating a file named script.R and add a line of code
+
+#### SCRIPT
+
+```
+# Load library
+library(tidyverse)
+```
+
+---
+
+## Saving changes
+
+The concept of "saving" is a complex concept in git and very different compare to saving in a word processor or other traditional file editing applications.
+
+
+### The git status command displays the state of the working directory
+
+
+#### COMMAND
+
+```
+git status
+```
+
+.center[.font180[.bold[DEMO]]]
+
+---
+
+## Saving changes
+
+The git add command adds a change in the working directory to the staging area. 
+
+### Staging area
+
+- The staging area is one of Git's more unique features
+
+- It as a buffer between the working directory and the project history
+
+Let's imagine the project history as a sequence of shipping boxes. In each box you have related files that you want to ship together. Each box contains files that solve a specific issue or improve a particulat area of your project.    
+The staging area is the place where you prepare these boxes. On the staging area you load the files that have to be in the same box. **Do not mess up with the boxes**
+
+
+---
+
+## Saving changes
+
+The git add command adds a change in the working directory to the staging area. 
+
+
+#### COMMAND
+
+```
+git add <filename>
+```
+
+<br>
+.center[.font180[.bold[DEMO]]]
+
+---
+
+## Saving changes
+
+- The git commit command captures a snapshot of the project's currently staged changes.    
+
+- Committed snapshots can be thought of as “safe” versions of a project
+
+- **Git will never change them unless you explicitly ask it to**
+
+.center[.bold[One of the most important thing is to write a meaningful commit message]]
+
+---
+
+#### COMMAND
+
+```
+git commit
+```
+
+<br>
+
+.center[.font180[.bold[DEMO]]]
+
+---
+
+## Add extra code to the file / stage it / commit it
+
+Add the following lines of code to the script.R file
+
+```
+# Create a table 
+df <- tibble(names = rep(LETTERS[1:3], 10), 
+             values = 1:30)
+
+```
+
+Then save it in the git project history
+
+```
+git status
+git diff
+git add script.R
+git commit
+```
+
+<br>
+git diff is a multi-use Git command that when executed runs a diff function on Git data sources
+
+
+---
+
+## Add extra code to the file / stage it / commit it
+
+Add the following lines of code to the script.R file
+
+```
+# Create a summary table 
+df %>% 
+    group_by(names) %>% 
+    summarise(SOMMA = sum(values))
+```
+
+Then create a README.md file where we explain the purpose of the project
+
+```
+touch README.md
+```
+
+Then save the git project history (save README and script files in two separated commits)
+
+```
+git status
+git add script.R
+git commit
+```
+
+---
+
+## Add extra code to the file / stage it / commit it
+
+Update the following lines of code to the script.R file
+
+```
+# Create a summary table 
+df %>% 
+    group_by(names) %>% 
+    summarise(MEDIA = mean(values))
+```
+
+Then save the git project history
+
+```
+git status
+git diff
+git add script.R
+git commit
+```
+
+---
+
+## Viewing an old revision 
+
+#### Checkout
+
+```
+git log --oneline
+git checkout <SHA>
+...
+git checkout master (or main)
+```
+
+#### Show
+
+```
+git log --oneline
+git show <SHA>:<filename>
+git show <SHA>:<filename> > <new_filename>
+
+```
+
+
+---
+
+## Search old revision
+
+#### Search through out commits
+
+```
+git log --grep="Update"
+```
+
+#### Search through out files content
+
+```
+git log -- script.R
+git log -p script.R
+
+git log -p -S mean
+```
+

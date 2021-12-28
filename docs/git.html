@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Reproducible Research</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Marco Chiapello" />
+    <meta name="date" content="2020-06-08" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="scrollable.css" type="text/css" />
+    <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
+    <link rel="stylesheet" href="fonts_mtheme_max.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide   
+
+
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+# .font200[Data science in Unix and R]
+## .font180[Version control with git and GitHub]
+
+&lt;br&gt;
+.marco[
+Marco Chiapello
+&lt;br&gt;
+January, 14th 2022
+]
+
+---
+
+layout: true
+
+# Version control
+
+---
+
+## What is version control? 
+
+- Version control is the practice of tracking and managing changes to software code.    
+
+- Version control systems are software tools that help software teams manage changes to source code over time.    
+
+- Version control software keeps track of every modification to the code in a special kind of database.    
+
+- Using version control software is a best practice for high performing software and DevOps teams.
+
+---
+
+## Benefits of version control systems
+
+1. A complete long-term change history of every file (**keep history**)
+   - This means every change made by many individuals over the years (**back up**).    
+   - Changes include the creation and deletion of files as well as edits to their contents (**view changes**).
+
+1. Branching and merging (**Experiment**)
+
+1. Traceability
+   - Being able to trace each change made to the software and connect it to project management and bug tracking software
+
+---
+layout: true
+
+# Git
+
+---
+
+## What is Git?
+
+- Git is the most widely used modern version control system in the world today (Git is a de facto standard)
+
+- Originally developed in 2005 by Linus Torvalds, the famous creator of the Linux operating system kernel
+
+- Git has the functionality, performance, security and flexibility that most individual developers need
+
+- Git is a very well supported open source project with over a decade of solid stewardship
+
+.center[**One common criticism of Git is that it can be difficult to learn**]
+
+---
+
+## Setting up a repository 
+
+**A Git repository is a virtual storage of your project.** It allows you to save versions of your code, which you can access when needed.
+
+- Initializing a new Git repo
+
+- Cloning an existing Git repo
+
+---
+
+## Setting up a repository 
+
+**A Git repository is a virtual storage of your project.** It allows you to save versions of your code, which you can access when needed.
+
+- **Initializing a new Git repo**
+
+- .opacity20[Cloning an existing Git repo]
+
+---
+
+## Initializing a new repository
+
+#### COMMAND
+
+```
+git init
+```
+
+---
+
+## Initializing a new repository
+
+#### COMMAND
+
+```
+git init
+```
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+.center[.font180[.bold[DEMO]]]
+
+
+---
+
+## Create a file
+
+For this tutorial we are going to create an R file with few line of commands.
+
+Let's start by creating a file named script.R and add a line of code
+
+#### SCRIPT
+
+```
+# Load library
+library(tidyverse)
+```
+
+---
+
+## Saving changes
+
+The concept of "saving" is a complex concept in git and very different compare to saving in a word processor or other traditional file editing applications.
+
+
+### The git status command displays the state of the working directory
+
+
+#### COMMAND
+
+```
+git status
+```
+
+.center[.font180[.bold[DEMO]]]
+
+---
+
+## Saving changes
+
+The git add command adds a change in the working directory to the staging area. 
+
+### Staging area
+
+- The staging area is one of Git's more unique features
+
+- It as a buffer between the working directory and the project history
+
+Let's imagine the project history as a sequence of shipping boxes. In each box you have related files that you want to ship together. Each box contains files that solve a specific issue or improve a particulat area of your project.    
+The staging area is the place where you prepare these boxes. On the staging area you load the files that have to be in the same box. **Do not mess up with the boxes**
+
+
+---
+
+## Saving changes
+
+The git add command adds a change in the working directory to the staging area. 
+
+
+#### COMMAND
+
+```
+git add &lt;filename&gt;
+```
+
+&lt;br&gt;
+.center[.font180[.bold[DEMO]]]
+
+---
+
+## Saving changes
+
+- The git commit command captures a snapshot of the project's currently staged changes.    
+
+- Committed snapshots can be thought of as “safe” versions of a project
+
+- **Git will never change them unless you explicitly ask it to**
+
+.center[.bold[One of the most important thing is to write a meaningful commit message]]
+
+---
+
+#### COMMAND
+
+```
+git commit
+```
+
+&lt;br&gt;
+
+.center[.font180[.bold[DEMO]]]
+
+---
+
+## Add extra code to the file / stage it / commit it
+
+Add the following lines of code to the script.R file
+
+```
+# Create a table 
+df &lt;- tibble(names = rep(LETTERS[1:3], 10), 
+             values = 1:30)
+
+```
+
+Then save it in the git project history
+
+```
+git status
+git diff
+git add script.R
+git commit
+```
+
+&lt;br&gt;
+git diff is a multi-use Git command that when executed runs a diff function on Git data sources
+
+
+---
+
+## Add extra code to the file / stage it / commit it
+
+Add the following lines of code to the script.R file
+
+```
+# Create a summary table 
+df %&gt;% 
+    group_by(names) %&gt;% 
+    summarise(SOMMA = sum(values))
+```
+
+Then create a README.md file where we explain the purpose of the project
+
+```
+touch README.md
+```
+
+Then save the git project history (save README and script files in two separated commits)
+
+```
+git status
+git add script.R
+git commit
+```
+
+---
+
+## Add extra code to the file / stage it / commit it
+
+Update the following lines of code to the script.R file
+
+```
+# Create a summary table 
+df %&gt;% 
+    group_by(names) %&gt;% 
+    summarise(MEDIA = mean(values))
+```
+
+Then save the git project history
+
+```
+git status
+git diff
+git add script.R
+git commit
+```
+
+---
+
+## Viewing an old revision 
+
+#### Checkout
+
+```
+git log --oneline
+git checkout &lt;SHA&gt;
+...
+git checkout master (or main)
+```
+
+#### Show
+
+```
+git log --oneline
+git show &lt;SHA&gt;:&lt;filename&gt;
+git show &lt;SHA&gt;:&lt;filename&gt; &gt; &lt;new_filename&gt;
+
+```
+
+
+---
+
+## Search old revision
+
+#### Search through out commits
+
+```
+git log --grep="Update"
+```
+
+#### Search through out files content
+
+```
+git log -- script.R
+git log -p script.R
+
+git log -p -S mean
+```
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
