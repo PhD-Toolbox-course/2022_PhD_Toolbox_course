@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Rmarkdown for Reproducible Research</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Marco Chiapello" />
+    <meta name="date" content="2020-06-08" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link rel="stylesheet" href="scrollable.css" type="text/css" />
+    <link rel="stylesheet" href="mtheme_max.css" type="text/css" />
+    <link rel="stylesheet" href="fonts_mtheme_max.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide   
+
+
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+# .font200[Data Science with Unix and R]
+## .font180[Rmarkdown for Reproducible Research]
+
+&lt;br&gt;
+.marco[
+Marco Chiapello
+&lt;br&gt;
+January, 14th 2022
+]
+
+---
+
+layout: true
+
+# Markdown
+
+---
+
+## What is markdown? 
+
+- Markdown is a lightweight markup language for creating formatted text using a plain-text editor
+
+- You can use special characters to define text styles    
+  - `#` is used for header definition    
+  - `**` around a word makes it **bold**
+
+- Refer to this [link](https://www.markdownguide.org/cheat-sheet/) for more detailed information
+
+- See the Markdown language in action: [click here](https://markdown-it.github.io/)
+
+---
+
+layout: true
+
+# Rmarkdown
+
+---
+
+&lt;img src="images/rmarkdown_wizards.png" width="5303" height="630px" style="display: block; margin: auto;" /&gt;
+
+---
+
+## What can do Rmarkdown? 
+
+- R Markdown documents are fully reproducible
+
+- Weave together narrative **text** and **code** to produce **elegantly formatted output**
+
+- R Markdown supports dozens of **static and dynamic output formats** including HTML, PDF, MS Word, Beamer, HTML5 slides, Tufte-style handouts, books, dashboards, shiny applications, scientific articles, websites, and more. 
+
+
+---
+
+## Rmarkdown anatomy
+
+There are 3 fundamental elements in a Rmarkdown document
+
+1. Metadata
+
+1. Text
+
+1. R chunks
+
+---
+
+## Metadata
+
+The YAML metadata of your document. This is the first part of the document and defines metadata like title and author, but also important iformation for the file output.
+
+.panelset[
+.panel[.panel-name[Code]
+
+```
+---
+title: "Untitled"
+author: "Marco Chiapello"
+date: "29/12/2021"
+output: html_document
+---
+```
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="images/rmarkdown-metadata1.png" width="830px" height="430px" style="display: block; margin: auto;" /&gt;
+]
+]
+
+---
+
+## Plain text
+
+The text in a Rmarkdown document is a regular text using the markdown sysntax
+
+.panelset[
+.panel[.panel-name[Code]
+
+```
+---
+title: "Untitled"
+author: "Marco Chiapello"
+date: "29/12/2021"
+output: html_document
+---
+
+# Introduction
+
+Goodmorning to **everybody** and welcome to this *amazing* ~~COURSE~~ MODULE of the PhDToolbox course
+
+```
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="images/rmarkdown-text1.png" width="830px" height="430px" style="display: block; margin: auto;" /&gt;
+]
+]
+
+---
+
+## R chunk
+
+The R chunk is the place where we can write down R code and make it interact with the document.
+
+.panelset[
+.panel[.panel-name[Code]
+
+&lt;img src="images/rmarkdown-chunk1.png" width="830px" height="300px" style="display: block; margin: auto;" /&gt;
+
+]
+
+.panel[.panel-name[Output]
+
+&lt;img src="images/rmarkdown-chunk2.png" width="830px" height="330px" style="display: block; margin: auto;" /&gt;
+
+]
+]
+
+---
+layout: false
+class: inverse, middle, center
+
+.white[
+.font700[DEMO]
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
