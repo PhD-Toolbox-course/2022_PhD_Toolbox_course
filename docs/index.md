@@ -15,7 +15,8 @@
 
 <center><h2><p>General Information</p></h2></center>
 
-**Venue**: [Aula B7, Palazzo Campana](https://goo.gl/maps/QjXmKNf3XTjCyMUDA)
+**Venue**: ~~[Aula B7, Palazzo Campana]~~ [Online meeting](https://meet.jit.si/2022-PhDToolbox-DataScienceInUnixAndR)
+
 
 
 **PhD toolbox workshop** is for any phD student who has data to analyze, no prior computational experience is required. This hands-on workshop teaches basic concepts, skills and tools for working more effectively with data.
