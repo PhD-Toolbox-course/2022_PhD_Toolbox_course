@@ -15,7 +15,7 @@
 
 <center><h2><p>General Information</p></h2></center>
 
-**Venue**: ~~[Aula B7, Palazzo Campana]~~ [Online meeting](https://meet.jit.si/2022-PhDToolbox-DataScienceInUnixAndR)
+**Venue**: ~~Aula B7, Palazzo Campana~~ [Online meeting](https://meet.jit.si/2022-PhDToolbox-DataScienceInUnixAndR)
 
 
 
