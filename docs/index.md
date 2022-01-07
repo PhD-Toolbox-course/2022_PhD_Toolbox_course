@@ -23,7 +23,7 @@
 
 Please create a profile on the following websites:
 
-- **Slack**: [Slack](https://phdtoolbox2022.slack.com/). For chatting and exchange information.
+- **Slack**: [Slack](https://join.slack.com/t/phdtoolbox2022/shared_invite/zt-11g7jt6y9-pM7BCShjsqN8oO995oCOhQ). For chatting and exchange information.
 
 - **RStudio Cloud**: [rstudio cloud](https://rstudio.cloud/). Website to use R.
 
