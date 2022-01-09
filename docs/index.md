@@ -69,4 +69,18 @@ On the [WIKI page](https://github.com/PhD-Toolbox-course/2022_PhD_Toolbox_course
 
 - We will use [Slack](https://phdtoolbox2022.slack.com/) for chatting, taking notes, and sharing URLs and bits of code.
 
-- We will use **sticky notes** to assess the completion of the exercises or for asking questions. Sticky notes will be also used to evaluate each chunk of the course. This is a good way for the teachers to improve and help the students.
+---
+
+### Code of conduct
+
+We are dedicated to providing a **welcoming and supportive environment** for all people, regardless of background or identity. 
+
+Any form of **behaviour to exclude, intimidate, or cause discomfort** is a violation of the Code of Conduct. 
+
+In order to foster a positive and professional learning environment we encourage the following kinds of behaviours in all platforms and events:
+
+- Use welcoming and inclusive language
+-  Be respectful of different viewpoints and experiences
+- Gracefully accept constructive criticism
+- Focus on what is best for the community
+- Show courtesy and respect towards other community members
