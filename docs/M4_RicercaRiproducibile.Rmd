@@ -54,7 +54,7 @@ class: title-slide
 
 
 <br><br><br>
-# .font200[Introduzione all'analisi RNASeq in R]  
+# .font170[Introduzione all'analisi RNASeq in R]  
 ## .font180[Reproducible Research]
 
 <br>
